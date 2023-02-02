@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table samuelkubala_studentlogger_'
+    - builder_table_create_samuelkubala_studentlogger_.php

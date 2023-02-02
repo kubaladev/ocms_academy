@@ -1,0 +1,4 @@
+title: Logs
+modelClass: SamuelKubala\Studentlogger\Models\Logger
+toolbar:
+    buttons: reorder_toolbar

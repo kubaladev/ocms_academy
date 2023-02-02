@@ -1,0 +1,11 @@
+plugin:
+    name: 'samuelkubala.studentlogger::lang.plugin.name'
+    description: 'samuelkubala.studentlogger::lang.plugin.description'
+    author: SamuelKubala
+    icon: oc-icon-clock-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Logs
+        url: samuelkubala/studentlogger/logs
+        icon: icon-clock-o
