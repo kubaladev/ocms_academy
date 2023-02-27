@@ -1,4 +1,6 @@
-<?php namespace RainLab\User;
+<?php
+
+namespace RainLab\User;
 
 use App;
 use Auth;

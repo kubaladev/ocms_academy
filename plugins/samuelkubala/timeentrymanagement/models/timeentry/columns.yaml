@@ -1,0 +1,26 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    startitme:
+        label: startitme
+        type: text
+        searchable: true
+        sortable: true
+    endtime:
+        label: endtime
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        searchable: true
+        sortable: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        searchable: true
+        sortable: true

@@ -1,0 +1,30 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+    name:
+        label: "Project Name"
+        type: text
+        searchable: true
+        sortable: true
+    customer:
+        label: "Customer Name"
+        type: text
+        searchable: true
+        sortable: true
+    owner:
+        label: "Owner name"
+        type: text
+        searchable: true
+        sortable: true
+    projectmanager:
+        label: "Project Manager"
+        type: text
+        searchable: true
+        sortable: true
+    isclosed:
+        label: "Project Closed"
+        type: switch
+        searchable: true
+        sortable: true

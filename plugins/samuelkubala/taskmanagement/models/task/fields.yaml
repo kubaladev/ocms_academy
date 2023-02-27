@@ -1,0 +1,26 @@
+fields:
+    id:
+        label: ID
+        disabled: true
+        type: text
+    name:
+        label: Name
+        span: auto
+        type: text
+    plannedstart:
+        label: 'Planned start'
+        mode: datetime
+        span: auto
+        type: datepicker
+    plannedend:
+        label: 'Planned end'
+        mode: datetime
+        span: auto
+        type: datepicker
+        comment: 'Task deadline'
+    plannedtime:
+        label: 'Planned time'
+        mode: datetime
+        span: auto
+        type: datepicker
+        comment: 'Total estimated time'

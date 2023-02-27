@@ -1,0 +1,38 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    plannedstart:
+        label: plannedstart
+        type: text
+        searchable: true
+        sortable: true
+    plannedend:
+        label: plannedend
+        type: text
+        searchable: true
+        sortable: true
+    plannedtime:
+        label: plannedtime
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        searchable: true
+        invisible: false
+        sortable: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        searchable: true
+        invisible: false
+        sortable: true

@@ -1,0 +1,14 @@
+fields:
+    id:
+        label: Id
+        span: auto
+        disabled: 1
+        type: number
+    startitme:
+        label: Startitme
+        span: auto
+        type: datepicker
+    endtime:
+        label: Endtime
+        span: auto
+        type: datepicker

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Time Entry
+
+# Model Form Field configuration
+form: $/samuelkubala/timeentrymanagement/models/timeentry/fields.yaml
+
+# Model Class name
+modelClass: SamuelKubala\TimeEntryManagement\Models\TimeEntry
+
+# Default redirect location
+defaultRedirect: samuelkubala/timeentrymanagement/timeentries
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: samuelkubala/timeentrymanagement/timeentries/update/:id
+    redirectClose: samuelkubala/timeentrymanagement/timeentries
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: samuelkubala/timeentrymanagement/timeentries
+    redirectClose: samuelkubala/timeentrymanagement/timeentries
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
