@@ -1,4 +1,6 @@
-<?php namespace SamuelKubala\TimeEntryManagement;
+<?php
+
+namespace SamuelKubala\TimeEntryManagement;
 
 use Backend;
 use System\Classes\PluginBase;
@@ -8,6 +10,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+    public $require = ['SamuelKubala.TaskManagement'];
     /**
      * Returns information about this plugin.
      *
@@ -30,7 +33,6 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
     }
 
     /**
@@ -40,7 +42,6 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
     }
 
     /**
@@ -81,13 +82,12 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
 
         return [
             'timeentrymanagement' => [
                 'label'       => 'TimeEntryManagement',
-                'url'         => Backend::url('samuelkubala/timeentrymanagement/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'url'         => Backend::url('samuelkubala/timeentrymanagement/timeentries'),
+                'icon'        => 'icon-clock-o',
                 'permissions' => ['samuelkubala.timeentrymanagement.*'],
                 'order'       => 500,
             ],

@@ -1,4 +1,6 @@
-<?php namespace SamuelKubala\Project;
+<?php
+
+namespace SamuelKubala\Project;
 
 use Backend;
 use System\Classes\PluginBase;
@@ -30,7 +32,6 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
     }
 
     /**
@@ -40,7 +41,6 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
     }
 
     /**
@@ -81,13 +81,13 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
+        //return []; // Remove this line to activate
 
         return [
             'project' => [
                 'label'       => 'Project',
-                'url'         => Backend::url('samuelkubala/project/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'url'         => Backend::url('samuelkubala/project/projects'),
+                'icon'        => 'icon-window-maximize',
                 'permissions' => ['samuelkubala.project.*'],
                 'order'       => 500,
             ],

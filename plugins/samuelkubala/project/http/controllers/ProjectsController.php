@@ -8,7 +8,9 @@ use SamuelKubala\Project\Models\Project;
 use RainLab\User\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Route;
 use WApi\ApiException\Http\Middlewares;
+
 
 
 use Illuminate\Support\MessageBag;
@@ -51,5 +53,18 @@ class ProjectsController extends Controller
         $project->isclosed = true;
         $project->save();
         return $project;
+    }
+    public function showtasks($id)
+    {
+        $project = Project::findOrFail($id);
+        return $project->tasks()->get();
+    }
+    public function test(Request $request)
+    {
+        app()->singleton('test', function () {
+            return true;
+        });
+
+        return (app('Illuminate\Http\Request') == $request);
     }
 }

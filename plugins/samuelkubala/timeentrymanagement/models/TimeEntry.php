@@ -62,7 +62,7 @@ class TimeEntry extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
+    public $hasOne = ['task' => ['samuelKubala\taskmanagement\models\task', 'key' => 'task_id']];
     public $hasMany = [];
     public $hasOneThrough = [];
     public $hasManyThrough = [];

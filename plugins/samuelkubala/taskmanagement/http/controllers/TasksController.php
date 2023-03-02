@@ -35,4 +35,8 @@ class TasksController extends Controller
     {
         return Task::destroy($id);
     }
+    public function getProject($id)
+    {
+        return Task::where('id', $id)->first()->project()->get();
+    }
 }

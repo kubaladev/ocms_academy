@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('customer');
             $table->string('owner');
             $table->string('projectmanager');
-            $table->boolean('isclosed');
+            $table->boolean('isclosed')->default(0);
             $table->timestamps();
         });
     }

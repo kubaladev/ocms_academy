@@ -63,10 +63,10 @@ class Task extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = ['entries' => ['samuelKubala\timeentrymanagement\models\timeentry', 'key' => 'task_id']];
     public $hasOneThrough = [];
     public $hasManyThrough = [];
-    public $belongsTo = [];
+    public $belongsTo = ['project' => ['SamuelKubala\Project\Models\Project', 'key' => 'project_id']];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

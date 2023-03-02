@@ -63,7 +63,7 @@ class Project extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = ['tasks' => ['samuelKubala\taskmanagement\models\task', 'key' => 'project_id']];
     public $hasOneThrough = [];
     public $hasManyThrough = [];
     public $belongsTo = [];

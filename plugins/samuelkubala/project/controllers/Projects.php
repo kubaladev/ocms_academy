@@ -15,8 +15,7 @@ class Projects extends Controller
      */
     public $implement = [
         'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-        'Backend.Behaviors.RelationController'
+        'Backend.Behaviors.ListController'
     ];
 
     /**

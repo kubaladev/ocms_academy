@@ -10,6 +10,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+    public $require = ['SamuelKubala.Project'];
     /**
      * Returns information about this plugin.
      *
@@ -81,13 +82,12 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
 
         return [
             'taskmanagement' => [
                 'label'       => 'TaskManagement',
-                'url'         => Backend::url('samuelkubala/taskmanagement/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'url'         => Backend::url('samuelkubala/taskmanagement/tasks'),
+                'icon'        => 'icon-calendar',
                 'permissions' => ['samuelkubala.taskmanagement.*'],
                 'order'       => 500,
             ],

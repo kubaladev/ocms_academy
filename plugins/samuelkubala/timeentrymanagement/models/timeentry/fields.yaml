@@ -12,3 +12,7 @@ fields:
         label: Endtime
         span: auto
         type: datepicker
+    taskid:
+        label: Taskid
+        span: auto
+        type: number

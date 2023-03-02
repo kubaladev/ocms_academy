@@ -24,3 +24,7 @@ fields:
         span: auto
         type: datepicker
         comment: 'Total estimated time'
+    project_id:
+        label: 'Project id'
+        span: auto
+        type: number
