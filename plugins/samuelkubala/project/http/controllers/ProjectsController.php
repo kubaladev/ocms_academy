@@ -7,42 +7,37 @@ use Illuminate\Routing\Controller;
 use SamuelKubala\Project\Models\Project;
 use RainLab\User\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Route;
-use WApi\ApiException\Http\Middlewares;
+use SamuelKubala\Project\Http\Resources\ProjectResource;
 
-
-
-use Illuminate\Support\MessageBag;
 
 class ProjectsController extends Controller
 {
     public function index()
     {
-        return Project::all();
+        return ProjectResource::collection(Project::all());
     }
 
     public function store(Request $request)
     {
-        return Project::create($request->all());
+        return new ProjectResource(Project::create($request->all()));
     }
 
     public function show($id)
     {
 
-        return Project::findOrFail($id);
+        return new ProjectResource(Project::findOrFail($id));
     }
 
     public function update(Request $request, $id)
     {
         $project = Project::findOrFail($id);
         $project->update($request->all());
-        return $project;
+        return new ProjectResource($project);
     }
 
     public function destroy($id)
     {
-        return Project::destroy($id);
+        return new ProjectResource(Project::destroy($id));
     }
     public function closeproject($id)
     {
@@ -52,7 +47,7 @@ class ProjectsController extends Controller
         }
         $project->isclosed = true;
         $project->save();
-        return $project;
+        return new ProjectResource($project);
     }
     public function showtasks($id)
     {
