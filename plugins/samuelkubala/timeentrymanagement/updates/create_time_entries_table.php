@@ -14,9 +14,9 @@ class CreateTimeEntriesTable extends Migration
         Schema::create('samuelkubala_timeentrymanagement_time_entries', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->time('startitme')->default($this->getCurrentTime());
-            $table->time('endtime');
-            $table->integer('taskid')->index();
+            $table->time('startitme');
+            $table->time('endtime')->nullable();
+            $table->integer('task_id')->index();
             $table->timestamps();
         });
     }
@@ -25,10 +25,5 @@ class CreateTimeEntriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('samuelkubala_timeentrymanagement_time_entries');
-    }
-
-    function getCurrentTime()
-    {
-        return Carbon::now()->toDateTimeString();
     }
 }

@@ -24,8 +24,8 @@ columns:
         type: datetime
         searchable: true
         sortable: true
-    taskid:
-        label: taskid
+    task_id:
+        label: task_id
         type: number
         searchable: true
         sortable: true

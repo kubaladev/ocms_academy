@@ -6,5 +6,8 @@ use Illuminate\Support\Facades\Route;
 use SamuelKubala\TaskManagement\Http\Controllers\TasksController;
 use WApi\ApiException\Http\Middlewares\ApiExceptionMiddleware;
 
-Route::resource('/teamgrid/tasks', TasksController::class)->middleware(ApiExceptionMiddleware::class);
-Route::get('teamgrid/tasks/project/{id}', [TasksController::class, 'getProject'])->middleware(ApiExceptionMiddleware::class);
+Route::middleware(ApiExceptionMiddleware::class)->group(function () {
+    Route::resource('/teamgrid/tasks', TasksController::class);
+    Route::get('teamgrid/tasks/getproject/{id}', [TasksController::class, 'getProject']);
+    Route::get('teamgrid/tasks/getentries/{id}', [TasksController::class, 'getTimeEntries']);
+});

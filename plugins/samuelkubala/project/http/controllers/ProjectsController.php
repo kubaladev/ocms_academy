@@ -48,7 +48,7 @@ class ProjectsController extends Controller
     {
         $project = Project::findOrFail($id);
         if ($project->isclosed) {
-            return response(['error' => 'Project allready closed', 'statusCode' => '500'], 500);
+            return response(['error' => 'Project is allready closed', 'statusCode' => '400'], 400);
         }
         $project->isclosed = true;
         $project->save();

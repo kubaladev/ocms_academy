@@ -66,7 +66,8 @@ class Task extends Model
     public $hasMany = ['entries' => ['samuelKubala\timeentrymanagement\models\timeentry', 'key' => 'task_id']];
     public $hasOneThrough = [];
     public $hasManyThrough = [];
-    public $belongsTo = ['project' => ['SamuelKubala\Project\Models\Project', 'key' => 'project_id']];
+    //test ci mozem pouzit velke pismena
+    public $belongsTo = ['project' => ['SamuelKubala\Project\Models\Project', 'key' => 'id', 'otherKey' => 'project_id']];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

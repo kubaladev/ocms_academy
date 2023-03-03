@@ -35,8 +35,25 @@ class TasksController extends Controller
     {
         return Task::destroy($id);
     }
+
     public function getProject($id)
     {
-        return Task::where('id', $id)->first()->project()->get();
+        return Task::findOrFail($id)->project()->get();
+    }
+
+    public function getTimeEntries($id)
+    {
+        return Task::findOrFail($id)->entries()->get();
+    }
+
+    public function isTaskTracked($id)
+    {
+        $entries = $this->getTimeEntries($id);
+        foreach ($entries as $entry) {
+            if ($entry->endtime == null) {
+                return $entry;
+            }
+        }
+        return false;
     }
 }
