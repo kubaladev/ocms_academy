@@ -12,12 +12,10 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('samuelkubala_project_projects', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-
             $table->increments('id');
+            $table->integer('owner_id')->index();
             $table->string('name');
             $table->string('customer');
-            $table->string('owner');
-            $table->string('projectmanager');
             $table->boolean('isclosed')->default(0);
             $table->timestamps();
         });

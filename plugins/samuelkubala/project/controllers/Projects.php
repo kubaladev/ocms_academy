@@ -10,6 +10,7 @@ use Backend\Classes\Controller;
  */
 class Projects extends Controller
 {
+    public $require = ['rainlab.user'];
     /**
      * @var array Behaviors that are implemented by this controller.
      */

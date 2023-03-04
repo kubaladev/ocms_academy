@@ -3,6 +3,7 @@
 namespace SamuelKubala\Project\Models;
 
 use October\Rain\Database\Model;
+use RainLab\User\Models\User;
 
 /**
  * Project Model
