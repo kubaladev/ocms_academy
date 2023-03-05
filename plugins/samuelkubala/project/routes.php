@@ -4,7 +4,8 @@ namespace SamuelKubala\Project;
 
 use Illuminate\Support\Facades\Route;
 use SamuelKubala\Project\Http\Controllers\ProjectsController;
-use SamuelKubala\Project\Http\Controllers\ProjectsUserController;
+use SamuelKubala\Project\Http\Controllers\ProjectTasksController;
+use SamuelKubala\Project\Http\Controllers\ProjectUsersController;
 use WApi\ApiException\Http\Middlewares\ApiExceptionMiddleware;
 use SamuelKubala\Project\Http\Middleware\ProjectAuthMiddleware;
 
@@ -27,12 +28,12 @@ Route::group(
             Route::get('/{id}', [ProjectsController::class, 'show']);
 
             //Tasks
-            Route::get('/alltasks/{id}', [ProjectsController::class, 'showAllTasks']);
-            Route::get('/mytasks/{id}', [ProjectsController::class, 'showMyTasks']);
+            Route::get('/alltasks/{id}', [ProjectTasksController::class, 'showAllTasks']);
+            Route::get('/mytasks/{id}', [ProjectTasksController::class, 'showMyTasks']);
 
             //Add or Remove users to project
-            Route::post('/adduser/{id}/{user_id}', [ProjectsUserController::class, 'addUserToProject']);
-            Route::delete('/removeuser/{id}/{user_id}', [ProjectsUserController::class, 'removeUserFromProject']);
+            Route::post('/adduser/{id}/{user_id}', [ProjectUsersController::class, 'addUserToProject']);
+            Route::delete('/removeuser/{id}/{user_id}', [ProjectUsersController::class, 'removeUserFromProject']);
         });
     }
 );

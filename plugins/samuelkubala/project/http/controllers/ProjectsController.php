@@ -2,10 +2,8 @@
 
 namespace SamuelKubala\Project\Http\Controllers;
 
-use Exception;
 use Illuminate\Routing\Controller;
 use SamuelKubala\Project\Models\Project;
-use RainLab\User\Models\User;
 use Illuminate\Http\Request;
 use SamuelKubala\Project\Http\Resources\ProjectResource;
 use Illuminate\Support\Facades\DB;
@@ -72,17 +70,5 @@ class ProjectsController extends Controller
         $project->isclosed = true;
         $project->save();
         return new ProjectResource($project);
-    }
-    //Show all tasks for current project
-    public function showAllTasks($id)
-    {
-        $project = Project::findOrFail($id);
-        return $project->tasks()->get();
-    }
-
-    //Show logged users tasks for current project
-    public function showMyTasks($id)
-    {
-        return $this->showAllTasks($id)->where('user_id', auth()->user()->id)->get();
     }
 }

@@ -5,7 +5,7 @@ namespace SamuelKubala\Project\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 
-class ProjectsUserController extends Controller
+class ProjectUsersController extends Controller
 {
     //Set table name here
     private $table = 'samuelkubala_project_users_projects';
