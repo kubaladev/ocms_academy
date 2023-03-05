@@ -35,6 +35,10 @@ class TasksController extends Controller
     public function update(Request $request, $id)
     {
         $task = Task::findOrFail($id);
+        $projectUsersController = new ProjectUsersController();
+        if (!$projectUsersController->isUserInProject($request->project_id, auth()->user()->id)) {
+            return response(['error' => 'Project not accessible for logged user', 'status' => '403'], 403);
+        }
         $task->update($request->all());
         return $task;
     }
