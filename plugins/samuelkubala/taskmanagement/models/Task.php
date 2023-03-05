@@ -24,12 +24,16 @@ class Task extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name', 'plannedstart', 'plannedend', 'plannedtime'];
+    protected $fillable = ['name', 'plannedstart', 'plannedend', 'plannedduration', 'project_id'];
 
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = [];
+    public $rules = [
+        'name' => 'required|alpha_dash|max:32|min:3|unique:samuelkubala_taskmanagement_tasks',
+        'plannedduration' => 'nullable|integer|min:0',
+        'project_id' => 'nullable|integer|min:0'
+    ];
 
     /**
      * @var array Attributes to be cast to native types

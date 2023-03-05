@@ -10,7 +10,7 @@ class ProjectUsersController extends Controller
     //Set table name here
     private $table = 'samuelkubala_project_users_projects';
 
-    private function isUserInProject($id, $user_id)
+    public function isUserInProject($id, $user_id)
     {
         $result = DB::table($this->table)
             ->where('user_id', $user_id)

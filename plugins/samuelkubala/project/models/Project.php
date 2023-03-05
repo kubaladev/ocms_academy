@@ -25,12 +25,15 @@ class Project extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name', 'customer', 'owner', 'projectmanager'];
+    protected $fillable = ['name', 'customer'];
 
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = ['name' => 'required|alpha_dash|max:32|min:3|unique:samuelkubala_project_projects'];
+    public $rules = [
+        'name' => 'required|alpha_dash|max:32|min:3|unique:samuelkubala_project_projects',
+        'customer' => 'alpha_dash|max:32',
+    ];
 
     /**
      * @var array Attributes to be cast to native types

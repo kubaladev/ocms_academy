@@ -20,7 +20,6 @@ class ProjectResource extends JsonResource
             'name' => $this->name,
             'customer' => $this->customer,
             'owner' => $this->owner_id,
-            //'projectmanager' => $this->projectmanager,
             'isclosed' => $this->isclosed
         ];
     }

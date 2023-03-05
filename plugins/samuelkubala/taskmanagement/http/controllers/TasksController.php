@@ -4,23 +4,31 @@ namespace SamuelKubala\TaskManagement\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use SamuelKubala\TaskManagement\Models\Task;
+use SamuelKubala\Project\Http\Controllers\ProjectUsersController;
 use Illuminate\Http\Request;
+
 
 class TasksController extends Controller
 {
     public function index()
     {
-        return Task::all();
+        return Task::where('owner_id', auth()->user()->id)->get();
     }
 
     public function store(Request $request)
     {
-        return Task::create($request->all());
+        $projectUsersController = new ProjectUsersController();
+        $task = Task::make($request->all());
+        $task->owner_id = auth()->user()->id;
+        if (!$projectUsersController->isUserInProject($task->project_id, auth()->user()->id)) {
+            return response(['error' => 'Project not accessible for logged user', 'status' => '403'], 403);
+        }
+        $task->save();
+        return $task;
     }
 
     public function show($id)
     {
-
         return Task::findOrFail($id);
     }
 
